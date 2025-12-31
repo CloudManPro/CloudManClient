@@ -1,18 +1,12 @@
-# cliente-repo/.github/workflows/cloudman-deploy.yml
-name: Cloudman Deploy
-
+name: Cloudman Pipeline
 on:
   push:
-    paths:
-      - '**/manifest.json'
-      - '**/main.tf'
-  workflow_dispatch:
+    paths: ['**/manifest.json']
 
 jobs:
-  call-engine:
-    # AQUI ESTÁ A MÁGICA: O cliente usa o código do seu repositório central
-    # Você pode usar @main, ou fixar uma versão como @v1, @v2-beta
-    uses: cloudman-io/cloudman-core/.github/workflows/engine.yml@main
+  infrastructure:
+    # Chamada para o repositório central da CloudManPro
+    uses: CloudManPro/cloudman-core/.github/workflows/engine.yml@main
     with:
       aws_region: "us-east-1"
     secrets:
