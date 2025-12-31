@@ -1,3 +1,5 @@
+#Git account name: CloudManPro
+#CloudManClient/.github/workflows/cloudman-deploy.yml
 name: Cloudman Pipeline
 on:
   push:
